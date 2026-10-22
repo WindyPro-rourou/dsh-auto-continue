@@ -1,0 +1,61 @@
+{
+  "name": "dsh-auto-continue",
+  "version": "0.2.0",
+  "description": "DSH 自动续跑插件：监视（多个）模型提供商，回合失败自动发「继续」续跑；连续失败后按列表切换回退模型（思考强度直接选定）；附 Web 配置台与运行事件日志。",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "auto-continue",
+    "failover",
+    "nvidia"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json",
+    "./client": {
+      "default": "./lib/client.js"
+    }
+  },
+  "files": [
+    "lib",
+    "skills",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.4",
+    "@deepseek-ai/dsh-agent": "^0.2.0",
+    "@deepseek-ai/dsh-llm": "^0.2.0",
+    "@deepseek-ai/schemastery": "^3.18.0",
+    "@deepseek-ai/dsh-skill": "^0.2.0"
+  },
+  "scripts": {
+    "test": "node --test test/api.test.mjs test/engine.test.mjs test/switch.test.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WindyPro-rourou/dsh-auto-continue.git"
+  },
+  "author": "WindyPro-rourou",
+  "homepage": "https://github.com/WindyPro-rourou/dsh-auto-continue",
+  "bugs": {
+    "url": "https://github.com/WindyPro-rourou/dsh-auto-continue/issues"
+  }
+}

@@ -1,0 +1,22 @@
+# dsh-auto-continue bundle patch: one plugin row over the profile root.
+#
+# When the configured provider (default nvidia) ends a turn with a
+# retry-exhausted failure (timeout, transport, stream closed, empty response,
+# ...) the plugin queues 继续 as the next user message. After
+# maxConsecutiveFailures consecutive abnormal endings it routes the next
+# request to the next entry of fallbacks, picking the highest reasoning effort
+# the target model accepts.
+#
+# fallbacks is the field to configure for real; every other field has a safe
+# default. Set it in the profile cordis.patch.yml (whole-row replacement, so
+# restate every field you want to keep).
+
+- insert:
+    - id: auto-continue
+      name: 'dsh-auto-continue'
+      config:
+        enabled: true
+        provider: nvidia
+        continueText: 继续
+        maxConsecutiveFailures: 2
+        fallbacks: []
