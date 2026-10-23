@@ -1,6 +1,6 @@
 {
   "name": "dsh-auto-continue",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "DSH 自动续跑插件：监视（多个）模型提供商，回合失败自动发「继续」续跑；连续失败后按列表切换回退模型（思考强度直接选定）；附 Web 配置台与运行事件日志。",
   "keywords": [
     "deepseek-harness",
