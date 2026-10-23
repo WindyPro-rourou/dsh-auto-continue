@@ -1,0 +1,38 @@
+{
+  "format": 1,
+  "title": {
+    "zh": "WindyPro 插件索引",
+    "en": "WindyPro Plugin Index"
+  },
+  "description": {
+    "zh": "WindyPro 维护的 DeepSeek Harness 插件集合。",
+    "en": "DeepSeek Harness plugins maintained by WindyPro."
+  },
+  "plugins": [
+    {
+      "name": "@windypro-rourou/dsh-auto-continue",
+      "title": {
+        "zh": "自动续跑",
+        "en": "Auto Continue"
+      },
+      "description": {
+        "zh": "监视指定提供商：回合因重试耗尽（超时/连接中断/空响应等）异常结束时自动续跑；连续失败达到阈值后切到备用模型（思考强度由你为每条备用显式选定）。自带配置面板与事件日志。",
+        "en": "Watches selected providers: automatically resumes a turn that ended on a retry-exhausted failure (timeout, transport, empty response). After the consecutive-failure threshold it switches to your fallback models with an explicitly chosen reasoning effort. Ships a config panel and an event log."
+      },
+      "author": "windypro-rourou",
+      "homepage": "https://github.com/WindyPro-rourou/dsh-auto-continue#readme",
+      "versions": [
+        {
+          "version": "0.2.3",
+          "publishTimestamp": 1792778270,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.0"
+          }
+        }
+      ]
+    }
+  ]
+}
